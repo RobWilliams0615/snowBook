@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      City.belongsTo(models.User, { foreignKey: 'userId' });
+      
+      City.belongsTo(models.User, 
+        { 
+          foreignKey: 'userId',
+        });
     }
   }
   City.init(
