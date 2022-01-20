@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Auth from './AuthFirebase';
 
 const Nav = () => {
   return (
@@ -9,7 +8,7 @@ const Nav = () => {
         className="logo"
         src="https://i.postimg.cc/15ZKqvzv/favicon-32x32.png"
       />
-     <Auth />
+
       <div className="navDiv">
         <Link to="/" className="divItem">
           Home

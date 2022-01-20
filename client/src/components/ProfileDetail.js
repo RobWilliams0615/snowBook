@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Form from './Form';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Form from "./Form";
 
 const ProfileDetail = (props) => {
   const [update, setUpdate] = useState(false);
@@ -23,18 +23,13 @@ const ProfileDetail = (props) => {
     personalStory: profileDetails.personalStory,
     contactInfo: profileDetails.contactInfo,
     isInstructor: profileDetails.isInstructor,
-    isOver21: profileDetails.isOver21
+    isOver21: profileDetails.isOver21,
   });
-
-  const displayUser = async () => {
-    const response = await axios.get(`/api/users/${_id}`);
-    setProfileDetails(response.data.userProfile);
-  };
 
   const deleteProfile = async () => {
     const response = await axios.delete(`/api/users/${_id}`);
 
-    props.history.push('/');
+    props.history.push("/");
     window.location.reload();
   };
 
@@ -43,7 +38,7 @@ const ProfileDetail = (props) => {
   };
 
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === 'true' ? true : false;
+    let bool_value = e.target.value === "true" ? true : false;
     setUpdateProfile({ ...updateProfile, [e.target.name]: bool_value });
   };
 
@@ -60,7 +55,25 @@ const ProfileDetail = (props) => {
   };
 
   useEffect(() => {
+    const source = axios.CancelToken.source();
+    const displayUser = async () => {
+      try {
+        const response = await axios.get(`/api/users/${_id}`, {
+          cancelToken: source.token,
+        });
+        setProfileDetails(response.data.userProfile);
+      } catch (error) {
+        if (axios.isCancel(error)) {
+        } else {
+          throw error;
+        }
+      }
+    };
     displayUser();
+
+    return () => {
+      source.cancel();
+    };
   }, []);
 
   return (
@@ -79,13 +92,13 @@ const ProfileDetail = (props) => {
             <h2>Type of ride: {profileDetails.typeOfRide}</h2>
             <h2>
               Backcountry:
-              {profileDetails.isBackcountry ? ' Yes' : ' No'}
+              {profileDetails.isBackcountry ? " Yes" : " No"}
             </h2>
             <h2>Personal Story: </h2>
             <p> {profileDetails.personalStory}</p>
             <h3>Contact: {profileDetails.contactInfo}</h3>
-            <h3>Instructor: {profileDetails.isInstructor ? ' Yes' : ' No'}</h3>
-            <h3>Over 21: {profileDetails.isOver21 ? ' Yes' : ' No'}</h3>
+            <h3>Instructor: {profileDetails.isInstructor ? " Yes" : " No"}</h3>
+            <h3>Over 21: {profileDetails.isOver21 ? " Yes" : " No"}</h3>
           </div>
         ) : (
           <div className="user-info">
@@ -97,7 +110,7 @@ const ProfileDetail = (props) => {
               updateUserProfile={updateUserProfile}
               handleUpdate={handleUpdate}
               profileDetails={profileDetails}
-              displayUser={displayUser}
+              // displayUser={displayUser}
             />
           </div>
         )}

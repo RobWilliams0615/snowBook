@@ -1,5 +1,9 @@
 # snowBook
 
+#### **_Deployment URL_**
+
+snowBook: [snowBook] (https://snowbook.herokuapp.com/)
+
 #### **_Members_**
 
 Soul lee: [Github](https://github.com/sal59265?tab=repositories) [Email](lee.soul12@gmail.com) [linkedIn](https://www.linkedin.com/in/soul-lee/)
@@ -28,7 +32,7 @@ PERN stack was the suitable technologies to use in this project to keep track of
 
 - [ ] Chat Feature
 - [ ] Location Api
-- [ ] Weather Api
+- [x] Weather Api
 - [ ] Live ski resort Api
 
 ![ERD](https://trello.com/1/cards/61e069ec035b18523b184bba/attachments/61e069ec035b18523b184bc5/previews/61e069ed035b18523b184be4/download/image.png)

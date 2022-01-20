@@ -8,11 +8,10 @@ const Form = ({
 }) => {
   return (
     <div>
-      <div for="first-name" className="grid-container-profile">
-        Update your profile
+      <div className="grid-container-profile">
         <form className="form" onSubmit={updateUserProfile}>
           <div>
-            <label>Enter first name: </label>
+            <label htmlFor="firstName">Enter first name: </label>
             <input
               id="first-name"
               type="text"
@@ -21,7 +20,7 @@ const Form = ({
               value={updateProfile.firstName}
             ></input>
 
-            <label for="last-name">Enter last name: </label>
+            <label htmlFor="lastName">Enter last name: </label>
             <input
               id="last-name"
               type="text"
@@ -30,7 +29,7 @@ const Form = ({
               value={updateProfile.lastName}
             ></input>
 
-            <label for="image">Enter image URL</label>
+            <label htmlFor="image">Enter image URL</label>
             <input
               id="image"
               type="text"
@@ -39,7 +38,7 @@ const Form = ({
               value={updateProfile.image}
             ></input>
 
-            <label for="gender">Enter gender: </label>
+            <label htmlFor="gender">Enter gender: </label>
             <input
               id="gender"
               type="text"
@@ -48,7 +47,7 @@ const Form = ({
               value={updateProfile.gender}
             ></input>
 
-            <label for="zip">Enter zip code: </label>
+            <label htmlFor="zipCode">Enter zip code: </label>
             <input
               id="zip"
               type="text"
@@ -57,7 +56,7 @@ const Form = ({
               value={updateProfile.zipCode}
             ></input>
 
-            <label for="interest">Enter interest: </label>
+            <label htmlFor="interest">Enter interest: </label>
             <input
               id="interest"
               type="text"
@@ -66,7 +65,7 @@ const Form = ({
               value={updateProfile.interest}
             ></input>
 
-            <label for="level">Enter level: </label>
+            <label htmlFor="level">Enter level: </label>
             <input
               id="level"
               type="text"
@@ -75,7 +74,7 @@ const Form = ({
               value={updateProfile.level}
             ></input>
 
-            <label for="ride">Enter ride: </label>
+            <label htmlFor="typeOfRide">Enter ride: </label>
             <input
               id="ride"
               type="text"
@@ -84,7 +83,7 @@ const Form = ({
               value={updateProfile.typeOfRide}
             ></input>
 
-            <label for="country">Back country? </label>
+            <label htmlFor="isBackcountry">Back country? </label>
             <select
               id="country"
               onChange={handleBooleans}
@@ -96,7 +95,9 @@ const Form = ({
               <option value={true}>Yes</option>
             </select>
 
-            <label for="story">Have a personal story to tell?</label>
+            <label htmlFor="personalStory">
+              Have a personal story to tell?
+            </label>
             <input
               id="story"
               type="text"
@@ -105,7 +106,7 @@ const Form = ({
               value={updateProfile.personalStory}
             ></input>
 
-            <label for="contact">Method of contact</label>
+            <label>Method of contact</label>
             <input
               id="contact"
               type="text"
@@ -114,7 +115,7 @@ const Form = ({
               value={updateProfile.contactInfo}
             ></input>
 
-            <label for="instructor">Instructor?</label>
+            <label htmlFor="isInstructor">Instructor?</label>
             <select
               id="instructor"
               name="isInstructor"
@@ -126,7 +127,7 @@ const Form = ({
               <option value="true">Yes</option>
             </select>
 
-            <label for="over">Over 21?</label>
+            <label htmlFor="isOver21">Over 21?</label>
             <select
               id="over"
               name="isOver21"
