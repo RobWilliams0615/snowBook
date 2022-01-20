@@ -1,17 +1,18 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import { Route } from 'react-router-dom';
-import City from './components/City';
-import Profile from './components/Profile';
-import ProfileDetail from './components/ProfileDetail';
-import Store from './components/Store';
-import Mountain from './components/Mountain';
-import StoreDetail from './components/StoreDetail';
-import Weather from './components/Weather';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Nav from "./components/Nav";
+import Register from "./components/Register";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import { Route } from "react-router-dom";
+import City from "./components/City";
+import Profile from "./components/Profile";
+import ProfileDetail from "./components/ProfileDetail";
+import Store from "./components/Store";
+import Mountain from "./components/Mountain";
+import StoreDetail from "./components/StoreDetail";
+import Weather from "./components/Weather";
+import axios from "axios";
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -21,17 +22,17 @@ function App() {
   const [home, setHome] = useState([]);
 
   const getHome = async () => {
-    const response = await axios.get('/api/users');
+    const response = await axios.get("/api/users");
     setHome(response.data.users);
   };
 
   const getStore = async () => {
-    const response = await axios.get('/api/skistores');
+    const response = await axios.get("/api/skistores");
     setStore(response.data.skistores);
   };
 
   const getCities = async () => {
-    const response = await axios.get('/api/cities');
+    const response = await axios.get("/api/cities");
     setCities(response.data.cities);
   };
 
@@ -50,6 +51,12 @@ function App() {
         <Route
           exact
           path="/"
+          component={(props) => <Register {...props} home={home} />}
+        />
+
+        <Route
+          exact
+          path="/home"
           component={(props) => <Home {...props} home={home} />}
         />
         <Route

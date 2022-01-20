@@ -100,6 +100,7 @@ a {
   padding: 10px;
   margin: 10px;
   border: none;
+  background: #00296b;
 }
 
 form,
@@ -161,8 +162,7 @@ textarea {
 }
 
 .profile-btn {
-  border: 0;
-  background-color: rgb(25, 8, 121);
+  border-radius: 25px;
   padding: 0.5rem;
   color: white;
   margin: 1rem 0;
@@ -183,7 +183,8 @@ textarea {
 }
 
 .profile-btn:hover {
-  background: green;
+  background: rgb(233, 230, 230);
+  color: #00296b;
 }
 
 .profile-image {
@@ -197,9 +198,10 @@ textarea {
 .profile-card {
   padding: 20px;
   border-radius: 15px;
-  color: rgb(9, 8, 21);
-  font-weight: bolder;
-  font-size: larger;
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 2px 2px grey;
   cursor: pointer;
   margin: 15px 0;
   max-width: 175px;

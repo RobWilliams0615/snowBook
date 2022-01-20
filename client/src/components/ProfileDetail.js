@@ -29,7 +29,7 @@ const ProfileDetail = (props) => {
   const deleteProfile = async () => {
     const response = await axios.delete(`/api/users/${_id}`);
 
-    props.history.push("/");
+    props.history.push("/home");
     window.location.reload();
   };
 

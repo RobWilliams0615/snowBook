@@ -113,9 +113,7 @@ const Profile = (props) => {
           value={newProfile.typeOfRide}
           placeholder={"Enter ride:"}
         ></input>
-
         <label htmlFor="isBackcountry">Backcountry?</label>
-
         <select
           id="country"
           onChange={handleBooleans}
