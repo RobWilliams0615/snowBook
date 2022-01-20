@@ -7,7 +7,6 @@ const StoreDetail = (props) => {
   const displaySkiStore = async () => {
     const response = await axios.get(`/api/skistores/${props.match.params.id}`);
     setSkiStoreDetail(response.data.skistore);
-    console.log(response.data.skistore);
   };
 
   useEffect(() => {
@@ -24,12 +23,10 @@ const StoreDetail = (props) => {
           {skiStoreDetails.rentalsOffered ? " Yes" : " No"}
         </h3>
 
-        <h2>SERVICES OFFERED HERE</h2>
         <h3>
           Guides offered:
           {skiStoreDetails.guidesOffered ? " Yes" : " No"}
         </h3>
-        <h2>RATING HERE</h2>
       </div>
     </div>
   );
