@@ -17,16 +17,31 @@ const Profile = (props) => {
     isInstructor: false,
     isOver21: false,
   });
+  const [validate, setValidate] = useState("");
 
   const addProfile = async (e) => {
     e.preventDefault();
-    const response = await axios.post("/api/users/createprofile", newProfile);
-
-    const resp = await axios.get(`/api/users`);
-
-    let lastEle = resp.data.users.slice(-1)[0].id;
-    props.history.push(`/profiledetail/${lastEle}`);
-    window.location.reload();
+    if (
+      newProfile.typeOfRide === "" ||
+      newProfile.firstName === "" ||
+      newProfile.lastName === "" ||
+      newProfile.image === "" ||
+      newProfile.gender === "" ||
+      newProfile.zipCode === "" ||
+      newProfile.zipCode === "" ||
+      newProfile.interest === "" ||
+      newProfile.level === "" ||
+      newProfile.personalStory === "" ||
+      newProfile.contactInfo === ""
+    ) {
+      setValidate("All fields must be filled in");
+    } else {
+      const response = await axios.post("/api/users/createprofile", newProfile);
+      const resp = await axios.get(`/api/users`);
+      let lastEle = resp.data.users.slice(-1)[0].id;
+      props.history.push(`/profiledetail/${lastEle}`);
+      window.location.reload();
+    }
   };
   //to get values from fields
   const handleChange = (e) => {
@@ -82,7 +97,7 @@ const Profile = (props) => {
         ></input>
         <input
           id="zip"
-          type="text"
+          type="number"
           name="zipCode"
           onChange={handleChange}
           value={newProfile.zipCode}
@@ -165,6 +180,9 @@ const Profile = (props) => {
           <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
+        <div className="validate-msg" style={{ color: "red" }}>
+          {validate}
+        </div>
         <input
           type="submit"
           className="create-profile-btn"

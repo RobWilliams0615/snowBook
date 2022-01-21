@@ -63,6 +63,7 @@ const Register = (props) => {
       {loggedIn === false ? (
         <div className="auth-form">
           <div>
+            <h1>Welcome to snowBook</h1>
             <h3>Register</h3>
             <input
               onChange={(event) => {
@@ -74,6 +75,7 @@ const Register = (props) => {
               onChange={(event) => {
                 setRegPassword(event.target.value);
               }}
+              type="password"
               placeholder={"Password"}
             ></input>
 
@@ -88,6 +90,7 @@ const Register = (props) => {
               }}
             />
             <input
+              type="password"
               placeholder="Password"
               onChange={(event) => {
                 setLogPassword(event.target.value);
