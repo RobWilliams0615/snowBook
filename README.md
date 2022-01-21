@@ -2,13 +2,17 @@
 
 #### **_Deployment URL_**
 
-snowBook: [snowBook] (https://snowbook.herokuapp.com/)
+snowBook: [snowBook](https://snowbook.herokuapp.com/)
+
+![1](https://i.imgur.com/pArocT9.png)
+
+![2](https://i.imgur.com/5oCKVUn.png)
 
 #### **_Members_**
 
-Soul lee: [Github](https://github.com/sal59265?tab=repositories) [Email](lee.soul12@gmail.com) [linkedIn](https://www.linkedin.com/in/soul-lee/)
+Soul Lee: [Github](https://github.com/sal59265?tab=repositories) [Email](lee.soul12@gmail.com) [linkedIn](https://www.linkedin.com/in/soul-lee/)
 
-Rober Williams: [Github](https://github.com/RobWilliams0615)
+Rob Williams: [Github](https://github.com/RobWilliams0615)
 [Email](robwilliams0221@gmail.com) [LinkedIn](https://www.linkedin.com/in/robmwilliamsiii/)
 
 Josh Rea: [Github](https://github.com/jdrea1587) [Email](joshdanielrea@gmail.com) [linkedIn](https://www.linkedin.com/in/joshua-rea/)
@@ -20,13 +24,14 @@ Michael Newman: [Github](https://github.com/therealmikenew) [Email](therealmicha
 
 ### **Description**
 
-SnowBook is a community app that
+snowBook is a community app that
 
-- Reach out to other riders based on their information in their profile
-- Find the best deal on gear
-- Create a profile
+- Create a profile and reach out to other riders based on information in their profile
+- Find the best deals on gear for shops in the area
+- Find the best places to ski and snowboard
+- Check weather conditions
 
-PERN stack was the suitable technologies to use in this project to keep track of information for each users and interact that data in frontend to display and make it friendly for the users.
+We found that the PERN stack had the best technologies to use for our project. The stack is an ideal way to keep track of information for each user, and to interact with data in the front-end to create an ideal user experience.
 
 ### **_*Future Updates*_**
 
@@ -35,17 +40,18 @@ PERN stack was the suitable technologies to use in this project to keep track of
 - [x] Weather Api
 - [ ] Live ski resort Api
 
-![ERD](https://trello.com/1/cards/61e069ec035b18523b184bba/attachments/61e069ec035b18523b184bc5/previews/61e069ed035b18523b184be4/download/image.png)
+Entity Relationship Diagram ![ERD](https://trello.com/1/cards/61e069ec035b18523b184bba/attachments/61e069ec035b18523b184bc5/previews/61e069ed035b18523b184be4/download/image.png)
 
-![Hierarchy Diagram]()
+Component Hierarchy Diagram ![Hierarchy Diagram](https://i.imgur.com/bA2yW3J.png)
 
 ---
 
 #### **_Technologies Used_**
 
-- HTML
-- CSS
+- HTML5
+- CSS3
 - PostgreSQL
+- Sequelize
 - Express
 - React.js
 - Node.js

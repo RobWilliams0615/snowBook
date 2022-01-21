@@ -13,7 +13,6 @@ const Nav = () => {
         <Link to="/home" className="divItem">
           Home
         </Link>
-
         <Link to="/profile" className="divItem">
           Profile
         </Link>

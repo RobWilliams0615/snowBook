@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Mountain = (props) => {
   const [cityDetails, setCityDetails] = useState([]);
@@ -9,6 +9,7 @@ const Mountain = (props) => {
     const response = await axios.get(`/api/cities/${props.match.params.id}`);
     setCityDetails(response.data.city);
     setResorts(response.data.city.resorts);
+    console.log(response.data.city);
   };
 
   useEffect(() => {

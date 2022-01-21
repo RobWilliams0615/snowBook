@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Weather = () => {
   const [update, setUpdate] = useState(false);
-  const [weather, setWeather] = useState("");
-  const [zip, setZip] = useState("");
+  const [weather, setWeather] = useState('');
+  const [zip, setZip] = useState('');
   const toggleUpdate = () => {
     setUpdate(!update);
   };
@@ -23,7 +23,7 @@ const Weather = () => {
   return (
     <div>
       {update === false ? (
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className="weather-form">
           <label>Enter Zip Code or City Name:</label>
           <input
             id="zip"
@@ -32,7 +32,7 @@ const Weather = () => {
             value={zip}
             onChange={handleChange}
           ></input>
-          <input type="submit" value="submit" />
+          <input className="zipcode-submit" type="submit" value="submit" />
         </form>
       ) : (
         <div className="weather">
@@ -55,7 +55,7 @@ const Weather = () => {
               Min Temp: {weather.forecast.forecastday[0].day.mintemp_f} F
             </div>
             <div>
-              Chance of Snow:{" "}
+              Chance of Snow:{' '}
               {weather.forecast.forecastday[0].day.daily_chance_of_snow}%
             </div>
             <div>Sunrise: {weather.forecast.forecastday[0].astro.sunrise}</div>

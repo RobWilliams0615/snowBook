@@ -22,6 +22,7 @@ body {
   justify-content: space-between;
   padding: 30px;
   width: 100%;
+  position: fixed;
 }
 
 .logo {
@@ -118,11 +119,18 @@ form,
   border-radius: 25px;
 }
 
+.create-form {
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
+}
+
 .mountain-cards,
 .store-cards {
   max-width: 500px;
   max-height: 90%;
-  margin-top: 5%;
+  margin-top: 5% !important;
   margin: 2rem auto;
   padding: 2rem;
   justify-content: center;
@@ -130,15 +138,29 @@ form,
   padding-bottom: 100px;
   height: 50%;
   background-color: rgba(220, 230, 247, 0.4);
-
+  color: white;
+  text-shadow: 3px 3px grey;
   display: inline-block !important;
   border-radius: 25px;
 }
-
+/* .store-cards {
+  margin-top: 5%;
+} */
 .weather-temp {
   background-color: rgba(220, 230, 247, 0.4);
   border-radius: 25px;
   padding: 50px;
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
+}
+
+.weather-form {
+  color: white;
+  font-weight: 900;
+  font-size: x-large;
+  text-shadow: 3px 3px grey;
 }
 
 .weather-details {
@@ -147,6 +169,10 @@ form,
   padding: 50px;
   margin-left: 350px;
   margin-right: 350px;
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
 }
 
 label {
@@ -177,6 +203,12 @@ textarea {
   padding: 10px;
   margin: 10px;
   border: none;
+  color: white;
+  background-color: #175cca;
+  font-weight: 900;
+}
+
+.zipcode-submit {
   color: white;
   background-color: #175cca;
   font-weight: 900;
@@ -227,6 +259,8 @@ textarea {
   max-width: 475px;
   height: auto;
   background-color: white;
+  border-radius: 5%;
+  opacity: 75%;
 }
 
 .blank-image {
@@ -262,4 +296,25 @@ input {
 .temp {
   font-size: 20px;
   font-weight: bolder;
+}
+
+.auth-form {
+  background-color: rgba(220, 230, 247, 0.4);
+  border-radius: 25px;
+  display: inline-block !important;
+  height: 50%;
+  justify-content: center;
+  max-width: 500px;
+  padding: 100px 2rem;
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
+}
+
+.auth-btn {
+  color: white;
+  background-color: #175cca;
+  font-weight: 900;
+  border-radius: 15px;
 }

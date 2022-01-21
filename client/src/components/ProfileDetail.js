@@ -110,7 +110,6 @@ const ProfileDetail = (props) => {
               updateUserProfile={updateUserProfile}
               handleUpdate={handleUpdate}
               profileDetails={profileDetails}
-              // displayUser={displayUser}
             />
           </div>
         )}

@@ -1,62 +1,60 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const Profile = (props) => {
   const [newProfile, setNewProfile] = useState({
-    typeOfRide: "",
-    firstName: "",
-    lastName: "",
-    image: "",
-    gender: "",
-    zipCode: "",
-    interest: "",
-    level: "",
+    typeOfRide: '',
+    firstName: '',
+    lastName: '',
+    image: '',
+    gender: '',
+    zipCode: '',
+    interest: '',
+    level: '',
     isBackcountry: false,
-    personalStory: "",
-    contactInfo: "",
+    personalStory: '',
+    contactInfo: '',
     isInstructor: false,
-    isOver21: false,
+    isOver21: false
   });
-  const [validate, setValidate] = useState("");
+  const [validate, setValidate] = useState('');
 
   const addProfile = async (e) => {
     e.preventDefault();
     if (
-      newProfile.typeOfRide === "" ||
-      newProfile.firstName === "" ||
-      newProfile.lastName === "" ||
-      newProfile.image === "" ||
-      newProfile.gender === "" ||
-      newProfile.zipCode === "" ||
-      newProfile.zipCode === "" ||
-      newProfile.interest === "" ||
-      newProfile.level === "" ||
-      newProfile.personalStory === "" ||
-      newProfile.contactInfo === ""
+      newProfile.typeOfRide === '' ||
+      newProfile.firstName === '' ||
+      newProfile.lastName === '' ||
+      newProfile.image === '' ||
+      newProfile.gender === '' ||
+      newProfile.zipCode === '' ||
+      newProfile.zipCode === '' ||
+      newProfile.interest === '' ||
+      newProfile.level === '' ||
+      newProfile.personalStory === '' ||
+      newProfile.contactInfo === ''
     ) {
-      setValidate("All fields must be filled in");
+      setValidate('All fields must be filled in');
     } else {
-      const response = await axios.post("/api/users/createprofile", newProfile);
+      const response = await axios.post('/api/users/createprofile', newProfile);
       const resp = await axios.get(`/api/users`);
       let lastEle = resp.data.users.slice(-1)[0].id;
       props.history.push(`/profiledetail/${lastEle}`);
       window.location.reload();
     }
   };
-  //to get values from fields
   const handleChange = (e) => {
     setNewProfile({ ...newProfile, [e.target.name]: e.target.value });
   };
 
-  // to change to boolean
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === "true" ? true : false;
+    let bool_value = e.target.value === 'true' ? true : false;
     setNewProfile({ ...newProfile, [e.target.name]: bool_value });
   };
 
   return (
     <div>
-      <form onSubmit={addProfile}>
+      <form className="create-form" onSubmit={addProfile}>
         <h3>Create your profile</h3>
         <img
           className="blank-image"
@@ -69,7 +67,7 @@ const Profile = (props) => {
           name="firstName"
           onChange={handleChange}
           value={newProfile.firstName}
-          placeholder={"Enter first name:"}
+          placeholder={'Enter first name:'}
         ></input>
         <input
           id="last-name"
@@ -77,7 +75,7 @@ const Profile = (props) => {
           name="lastName"
           onChange={handleChange}
           value={newProfile.lastName}
-          placeholder={"Enter last name:"}
+          placeholder={'Enter last name:'}
         ></input>
         <input
           id="image"
@@ -85,7 +83,7 @@ const Profile = (props) => {
           name="image"
           onChange={handleChange}
           value={newProfile.image}
-          placeholder={"Enter image URL:"}
+          placeholder={'Enter image URL:'}
         ></input>
         <input
           id="gender"
@@ -93,7 +91,7 @@ const Profile = (props) => {
           name="gender"
           onChange={handleChange}
           value={newProfile.gender}
-          placeholder={"Enter gender:"}
+          placeholder={'Enter gender:'}
         ></input>
         <input
           id="zip"
@@ -101,7 +99,7 @@ const Profile = (props) => {
           name="zipCode"
           onChange={handleChange}
           value={newProfile.zipCode}
-          placeholder={"Enter zip code:"}
+          placeholder={'Enter zip code:'}
         ></input>
         <input
           id="interest"
@@ -109,7 +107,7 @@ const Profile = (props) => {
           name="interest"
           onChange={handleChange}
           value={newProfile.interest}
-          placeholder={"Enter interest:"}
+          placeholder={'Enter interest:'}
         ></input>
         <input
           id="level"
@@ -117,7 +115,7 @@ const Profile = (props) => {
           name="level"
           onChange={handleChange}
           value={newProfile.level}
-          placeholder={"Enter level:"}
+          placeholder={'Enter level:'}
         ></input>
 
         <input
@@ -126,7 +124,7 @@ const Profile = (props) => {
           name="typeOfRide"
           onChange={handleChange}
           value={newProfile.typeOfRide}
-          placeholder={"Enter ride:"}
+          placeholder={'Enter ride:'}
         ></input>
         <label htmlFor="isBackcountry">Backcountry?</label>
         <select
@@ -135,7 +133,7 @@ const Profile = (props) => {
           name="isBackcountry"
           id="isBackcountry"
           value={newProfile.isBackcountry}
-          placeholder={"Backountry?:"}
+          placeholder={'Backountry?:'}
         >
           <option value={false}>No</option>
           <option value={true}>Yes</option>
@@ -146,7 +144,7 @@ const Profile = (props) => {
           name="personalStory"
           onChange={handleChange}
           value={newProfile.personalStory}
-          placeholder={"Have a personal story to tell?:"}
+          placeholder={'Have a personal story to tell?:'}
         ></input>
         <input
           id="contact"
@@ -154,7 +152,7 @@ const Profile = (props) => {
           name="contactInfo"
           onChange={handleChange}
           value={newProfile.contactInfo}
-          placeholder={"Contact Info:"}
+          placeholder={'Contact Info:'}
         ></input>
         <label htmlFor="isInstructor">Instructor?</label>
 
@@ -180,7 +178,7 @@ const Profile = (props) => {
           <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
-        <div className="validate-msg" style={{ color: "red" }}>
+        <div className="validate-msg" style={{ color: 'red' }}>
           {validate}
         </div>
         <input

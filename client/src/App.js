@@ -37,9 +37,25 @@ function App() {
   };
 
   useEffect(() => {
-    getHome();
-    getStore();
-    getCities();
+    const source = axios.CancelToken.source();
+
+    const getAllData = async () => {
+      try {
+        getHome();
+        getStore();
+        getCities();
+      } catch (error) {
+        if (axios.isCancel(error)) {
+        } else {
+          throw error;
+        }
+      }
+    };
+    getAllData();
+
+    return () => {
+      source.cancel();
+    };
   }, []);
 
   return (
